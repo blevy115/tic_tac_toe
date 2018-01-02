@@ -10,13 +10,13 @@ img {
 .board {
   width: 100%;
   position: relative;
-  height: 500px;
+  height: 600px;
   border-collapse: collapse;
 }
 
 .square{
   width: 33.3333%;
-  height:100%;
+  height:200px;
   border: 1px solid black;
   display: inline-block;
   position: relative;

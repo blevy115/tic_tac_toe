@@ -1,7 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
   var square = document.getElementsByClassName('square')
   var counter = 0
+  var message = document.createElement('div');
+
   for (var i=0; square.length>i; i++){
+    square[i].className = 'square '+i
     square[i].addEventListener('click', function(e){
       if (this.classList.contains('o') === false &&
           this.classList.contains('x') === false){
@@ -16,6 +19,21 @@ document.addEventListener('DOMContentLoaded', function () {
       this.appendChild(img)
       counter ++
     };
+
+
+// Win Conditions
+      if(square[0].className === square[1].className && square[0].className === square[2].className ||
+         square[3].className === square[4].className && square[3].className === square[5].className ||
+         square[6].className === square[7].className && square[6].className === square[8].className ||
+         square[0].className === square[3].className && square[0].className === square[6].className ||
+         square[1].className === square[4].className && square[1].className === square[5].className ||
+         square[2].className === square[5].className && square[2].className === square[8].className ||
+         square[0].className === square[4].className && square[0].className === square[8].className ||
+         square[2].className === square[4].className && square[2].className === square[8].className)
+      {
+        message.innerText = "We have a winner!!";
+        document.body.appendChild(message)
+      }
     });
   };
-})
+});

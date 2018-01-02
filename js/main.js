@@ -23,16 +23,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Win Conditions
       if(square[0].className === square[1].className && square[0].className === square[2].className ||
-        square[3].className === square[4].className && square[3].className === square[5].className ||
-        square[6].className === square[7].className && square[6].className === square[8].className ||
-        square[0].className === square[3].className && square[0].className === square[6].className ||
-        square[1].className === square[4].className && square[1].className === square[7].className ||
-        square[2].className === square[5].className && square[2].className === square[8].className ||
-        square[0].className === square[4].className && square[0].className === square[8].className ||
-        square[2].className === square[4].className && square[2].className === square[8].className)
+         square[3].className === square[4].className && square[3].className === square[5].className ||
+         square[6].className === square[7].className && square[6].className === square[8].className ||
+         square[0].className === square[3].className && square[0].className === square[6].className ||
+         square[1].className === square[4].className && square[1].className === square[7].className ||
+         square[2].className === square[5].className && square[2].className === square[8].className ||
+         square[0].className === square[4].className && square[0].className === square[8].className ||
+         square[2].className === square[4].className && square[2].className === square[8].className)
         {
-          message.innerText = "We have a winner!!";
+          if (this.className === 'square x'){
+            message.innerText = "We have a winner! Player 'X' has won";
+          }else if (this.className === 'square o'){
+            message.innerText = "We have a winner! Player 'O' has won";
+          }
           document.body.appendChild(message)
+          for (var i=0; square.length>i; i++){
+            if (square[i].className === this.className){
+              square[i].style.backgroundColor = 'yellow'
+            }
+          }
         }
 
         // Find a better way to do this

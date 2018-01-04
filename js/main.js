@@ -29,9 +29,10 @@ document.addEventListener('DOMContentLoaded', function () {
          square[1].className === square[4].className && square[1].className === square[7].className ||
          square[2].className === square[5].className && square[2].className === square[8].className ||
          square[0].className === square[4].className && square[0].className === square[8].className ||
-         square[2].className === square[4].className && square[2].className === square[8].className)
+         square[2].className === square[4].className && square[2].className === square[6].className)
         {
           if (this.className === 'square x'){
+            console.log(this);
             message.innerText = "We have a winner! Player 'X' has won";
           }else if (this.className === 'square o'){
             message.innerText = "We have a winner! Player 'O' has won";

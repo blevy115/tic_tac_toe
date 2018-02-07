@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
       };
 
   // Tie checker
-      if (message.innerText === "");
+      if (message.innerText === ""){
       var tie = 0;
       for (var i=0; square.length>i; i++){
         if (square[i].classList.contains(i) === false){ // count how many squares have been used if class has changed
@@ -79,7 +79,8 @@ document.addEventListener('DOMContentLoaded', function () {
           };
         };
       };
+    }
     });
   };
-  
+
 });
